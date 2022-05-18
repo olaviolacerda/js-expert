@@ -1,0 +1,7 @@
+- strict mode: prevent to made a mess on javascript
+- call stack: pilha de acoes de forma ordenada, FILO, pilha de execucao
+- stack overflow: estourar chamadas na pilha
+- memory heap: armazenados enderecos de memoria, apontandos pelo callstack para trabalhar arrays, dados de tipo de referencia
+- coercao de tipo: conversao de um tipo para o outro
+- coercao implicita: somar string com numero, if variavel que nao eh booleana
+- coercao explicita: 
