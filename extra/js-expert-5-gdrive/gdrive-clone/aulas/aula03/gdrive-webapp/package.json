@@ -11,7 +11,7 @@
   "author": "erickwendel",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.12.3"
+    "http-server": "^14.1.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
