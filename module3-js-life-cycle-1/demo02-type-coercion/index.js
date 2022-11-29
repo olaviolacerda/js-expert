@@ -21,26 +21,26 @@ console.assert(('hello' && 123) === 123, "|| returns the last element!")
 
 // ----------------------
 const item = {
-    name: 'Olavio',
-    age: 26,
-    // string: 1 se nao for primitivo, chama o valueOF
-    toString() {
-        return `Name: ${this.name}, Age: ${this.age}`
-    },
-    // number: 1 se nao for primitivo, chama o toString
-    valueOf() {
-        return { hey: 'dude' }
-    },
-    // ele tem prioridade
-    [Symbol.toPrimitive](coercionType) {
-        // console.log('trying to convert to', coercionType)
-        const types = {
-            string: JSON.stringify(this),
-            number: '0007'
-        }
-
-        return types[coercionType] || types.string
+  name: 'Olavio',
+  age: 26,
+  // string: 1 se nao for primitivo, chama o valueOF
+  toString() {
+    return `Name: ${this.name}, Age: ${this.age}`
+  },
+  // number: 1 se nao for primitivo, chama o toString
+  valueOf() {
+    return { hey: 'dude' }
+  },
+  // ele tem prioridade
+  [Symbol.toPrimitive](coercionType) {
+    // console.log('trying to convert to', coercionType)
+    const types = {
+      string: JSON.stringify(this),
+      number: '0007'
     }
+
+    return types[coercionType] || types.string
+  }
 }
 
 // console.log('toString', String(item))

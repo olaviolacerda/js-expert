@@ -1,7 +1,7 @@
 const assert = require('assert')
 const obj = {}
 const arr = []
-const fn = () => {}
+const fn = () => { }
 
 // internamente, objetos literais viram funcoes explicitas
 console.log('new Object is {}?', new Object().__proto__ === {}.__proto__)
@@ -24,15 +24,15 @@ assert.deepStrictEqual(obj.__proto__.__proto__, null)
 // -----------------
 console.log('--------------------------')
 
-function Employee() {}
+function Employee() { }
 Employee.prototype.salary = () => "salary**"
 
-function Supervisor() {}
+function Supervisor() { }
 // herda a instancia de employee
 Supervisor.prototype = Object.create(Employee.prototype)
 Supervisor.prototype.profitShare = () => "profitShare**"
 
-function Manager(){}
+function Manager() { }
 Manager.prototype = Object.create(Supervisor.prototype)
 Manager.prototype.monthlyBonuses = () => 'montlhyBonuses**'
 
@@ -72,15 +72,15 @@ assert.deepStrictEqual(manager.__proto__.__proto__.__proto__.__proto__.__proto__
 console.log('----------------------')
 
 class T1 {
-    ping() { return 'ping' }
+  ping() { return 'ping' }
 }
 
 class T2 extends T1 {
-    pong() { return 'pong' }
+  pong() { return 'pong' }
 }
 
 class T3 extends T2 {
-    shoot() { return 'shoot' }
+  shoot() { return 'shoot' }
 }
 
 const t3 = new T3()

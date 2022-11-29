@@ -1,0 +1,1 @@
+[{"id":1,"vehicles":["Motorcycle","Car","Truck"],"kmTraveled":10000,"from":"2009-01-01","to":"2010-01-01"},{"id":"2","vehicles":["Teste"],"kmTraveled":"20000","from":"2020-01-01","to":"2022-01-02"}]
