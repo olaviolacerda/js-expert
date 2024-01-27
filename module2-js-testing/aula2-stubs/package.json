@@ -4,7 +4,7 @@
   "description": "",
   "main": "service.test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node service.test.js"
   },
   "keywords": [],
   "author": "",
