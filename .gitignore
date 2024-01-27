@@ -104,3 +104,10 @@ dist
 .tern-port
 
 .idea
+
+
+.vscode
+
+node_modules
+
+.nyc_output

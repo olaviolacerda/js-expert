@@ -4,9 +4,10 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "start": "nodemon api.js",
-    "test": "npx mocha -w",
-    "test:cover": "npx nyc mocha"
+    "start": "nodemon src/api.js",
+    "test": "npx mocha src/*.test.js",
+    "test:dev": "npm run test -- -w",
+    "test:cov": "npx nyc npm run test --"
   },
   "keywords": [],
   "author": "",
