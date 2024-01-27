@@ -1,48 +1,47 @@
-const Service = require('./src/service')
-const sinon = require('sinon')
-const { assert, deepStrictEqual } = require('assert')
-const BASE_URL_1 = 'https://swapi.dev/api/planets/1/'
-const BASE_URL_2 = 'https://swapi.dev/api/planets/2/'
-const mocks = {
-  tatooine: require('./mocks/tatooine.json'),
-  alderaan: require('./mocks/alderaan.json'),
-}
+const { deepStrictEqual } = require("assert");
+const { createSandbox } = require("sinon");
+const sinon = createSandbox();
+const Service = require("./src/service");
 
-  ;
+const BASE_URL_1 = "https://swapi.dev/api/planets/1/";
+const BASE_URL_2 = "https://swapi.dev/api/planets/2/";
+
+const mocks = {
+  alderaan: require("./mocks/alderaan.json"),
+  tatooine: require("./mocks/tatooine.json"),
+};
+
 (async () => {
   {
     // // assim ele vai na api na internet
-    // const service = new Service() 
-    // const withoutStub = await service.makeRequest(BASE_URL_2)
-    // console.log(JSON.stringify(JSON.parse(withoutStub)))
+    // const service = new Service()
+    // const dados = await service.makeRequest(BASE_URL_2)
+    // console.log('dados', JSON.stringify(dados))
   }
-  const service = new Service()
-  const stub = sinon.stub(service, service.makeRequest.name)
 
-  stub
-    .withArgs(BASE_URL_1)
-    .resolves(mocks.tatooine)
+  const service = new Service();
+  const stub = sinon.stub(service, service.makeRequest.name);
 
-  stub
-    .withArgs(BASE_URL_2)
-    .resolves(mocks.alderaan)
+  stub.withArgs(BASE_URL_1).resolves(mocks.tatooine);
+  stub.withArgs(BASE_URL_2).resolves(mocks.alderaan);
 
   {
     const expected = {
-      name: 'Tatooine',
-      surfaceWater: '1',
-      appearedIn: 5
-    }
-    const results = await service.getPlanets(BASE_URL_1)
-    deepStrictEqual(results, expected)
+      name: "Tatooine",
+      surfaceWater: "1",
+      appearedIn: 5,
+    };
+    const results = await service.getPlanets(BASE_URL_1);
+    deepStrictEqual(results, expected);
   }
+
   {
     const expected = {
-      name: 'Alderaan',
-      surfaceWater: '40',
-      appearedIn: 2
-    }
-    const results = await service.getPlanets(BASE_URL_2)
-    deepStrictEqual(results, expected)
+      name: "Alderaan",
+      surfaceWater: "40",
+      appearedIn: 2,
+    };
+    const results = await service.getPlanets(BASE_URL_2);
+    deepStrictEqual(results, expected);
   }
-})()
+})();
