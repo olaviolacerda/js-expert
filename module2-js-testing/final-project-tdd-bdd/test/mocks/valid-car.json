@@ -1,1 +1,7 @@
-{"id":"747a65bf-3157-41f4-a52a-3911345ad9ab","name":"Land Cruiser","releaseYear":2021,"available":true,"gasAvailable":true}
+{
+  "id": "e0aa674c-3545-401f-ace5-ee18c8c7e0ea",
+  "name": "Malibu",
+  "releaseYear": 2023,
+  "available": true,
+  "gasAvailable": true
+}
